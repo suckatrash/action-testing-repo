@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: genebean/cd4pe-protect-production@customization
+    - uses: genebean/cd4pe-protect-production@releases/v1
       with:
         cd4pe-user: 'my-cd4pe-user'
         label: 'do not merge'
