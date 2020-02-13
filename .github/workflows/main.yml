@@ -12,3 +12,4 @@ jobs:
       with:
         cd4pe-user: 'my-cd4pe-user'
         label: 'do not merge'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
