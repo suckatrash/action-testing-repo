@@ -1,0 +1,14 @@
+name: Protect Production
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: genebean/cd4pe-protect-production@customization
+      with:
+        cd4pe-user: 'my-cd4pe-user'
+        label: 'do not merge'
