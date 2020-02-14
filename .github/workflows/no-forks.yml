@@ -6,7 +6,7 @@ jobs:
     steps:
     - name: Fork tests
       run: |
-        if [ -z "$GITHUB_BASE_REF" ] || [ -z "$GITHUB_HEAD_REF" ]; then
+        if [ ! -z "$GITHUB_BASE_REF" ] || [ ! -z "$GITHUB_HEAD_REF" ]; then
           env |sort |grep GITHUB
           echo "::error ::Forks are not allowed, please use branches in this repo instead."; exit 1
         fi
