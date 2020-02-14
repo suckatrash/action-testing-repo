@@ -6,13 +6,14 @@ on:
       - production
 
 jobs:
-  build:
+  check-submitter:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - run: |
-        if [ ${GITHUB_ACTOR} != "genebean" ]; then
+    - name: Check PR submitter
+      run: |
+        if [ ${GITHUB_ACTOR} != "foo" ]; then
           echo "::error ::Only CD4PE may submit changes to production. Please make your PR target master instead."
         fi
