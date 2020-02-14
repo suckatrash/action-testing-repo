@@ -12,4 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: echo ${GITHUB_ACTOR}
+    - run: |
+        if [ ${GITHUB_ACTOR} != "genebean" ]; then
+          echo "::error ::Only CD4PE may submit changes to production. Please make your PR target master instead."
+        fi
