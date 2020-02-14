@@ -1,0 +1,10 @@
+name: No forks allowed
+on: [push, pull_request]
+jobs:
+  is-this-a-fork:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fork tests
+      run: |
+        if [ -v GITHUB_BASE_REF || -v GITHUB_HEAD_REF ]; then
+          echo "::error ::Forks are not allowed, please use branches in this repo instead."; exit 1
