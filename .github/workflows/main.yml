@@ -1,5 +1,4 @@
 name: Protect Production
-
 on:
   pull_request:
     branches:
@@ -10,6 +9,7 @@ jobs:
     steps:
     - name: Check PR submitter
       run: |
-        if [ ${GITHUB_ACTOR} != "genebean" ]; then
-          echo "::error ::Only CD4PE may submit changes to production. Please make your PR target master instead."; exit 1
+        if [ ${GITHUB_ACTOR} != "foo" ]; then
+          echo "::error ::Only CD4PE may submit changes to production.\nPlease make your PR target master instead."; exit 1
         fi
+
