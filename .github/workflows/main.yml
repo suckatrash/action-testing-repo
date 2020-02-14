@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    #- uses: actions/checkout@v2
     - name: Check PR submitter
       run: |
         if [ ${GITHUB_ACTOR} != "foo" ]; then
-          echo "::error ::Only CD4PE may submit changes to production. Please make your PR target master instead."
-          exit 1
+          echo "::error ::Only CD4PE may submit changes to production. Please make your PR target master instead."; exit 1
         fi
